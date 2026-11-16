@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 910" width="1500" height="910" font-family="Segoe UI,Helvetica,Arial,sans-serif">
+<title>Signal flow of the 2.4 GHz to 10 GHz transponder on a USRP B200</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1f2937"/></marker><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/></marker><marker id="ahs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="1500" height="910" fill="#ffffff"/>
+<text x="20" y="34" font-size="20" text-anchor="start" fill="#1f2937" font-weight="600" >2.4 GHz → 10 GHz transponder: signal flow</text>
+<text x="1480" y="34" font-size="13" text-anchor="end" fill="#6b7280" font-weight="400" >single USRP B200 · 625 kS/s · receive on the top row, transmit on the bottom row</text>
+<rect x="20" y="56" width="230" height="750" rx="10" fill="#f3f4f6"/>
+<text x="34" y="80" font-size="14" text-anchor="start" fill="#1f2937" font-weight="600" >Antennas and filters</text>
+<rect x="265" y="56" width="500" height="750" rx="10" fill="#e8f1fb"/>
+<text x="279" y="80" font-size="14" text-anchor="start" fill="#1f2937" font-weight="600" >AD9364 transceiver chip</text>
+<rect x="780" y="56" width="230" height="750" rx="10" fill="#e7f5ec"/>
+<text x="794" y="80" font-size="14" text-anchor="start" fill="#1f2937" font-weight="600" >FPGA</text>
+<rect x="1025" y="56" width="455" height="750" rx="10" fill="#f5eefb"/>
+<text x="1039" y="80" font-size="14" text-anchor="start" fill="#1f2937" font-weight="600" >Host PC: GNU Radio flowgraph</text>
+<rect x="258" y="50" width="760" height="762" rx="14" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="2 4"/>
+<text x="1012" y="826" font-size="12" text-anchor="end" fill="#6b7280" font-weight="400" >USRP B200</text>
+<text x="34" y="116" font-size="13" text-anchor="start" fill="#6b7280" font-weight="600" >Receive →</text>
+<text x="34" y="776" font-size="13" text-anchor="start" fill="#6b7280" font-weight="600" >← Transmit</text>
+<path d="M62 190 L62 148 M48 148 L62 168 L76 148 Z" fill="none" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M62 190 L137 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="137.0" y="167.0" width="56" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M153.0 178 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M160 183 L170 173" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M153.0 190 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M153.0 202 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M160 207 L170 197" stroke="#1f2937" stroke-width="1.4"/>
+<text x="165" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >2.4 GHz</text>
+<text x="165" y="245" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >band-pass</text>
+<text x="165" y="154" font-size="12" text-anchor="middle" fill="#6b7280" font-weight="400" >2400.0–2400.5 MHz</text>
+<path d="M193 190 L303 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<text x="256" y="182" font-size="11" text-anchor="end" fill="#6b7280" font-weight="400" >RX2</text>
+<path d="M303.0 168.0 L347.0 190 L303.0 212.0 Z" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M305.0 214.0 L343.0 168.0" stroke="#1f2937" stroke-width="1.3" fill="none" marker-end="url(#ahs)"/>
+<g><title>rx_gain slider</title><circle cx="349" cy="166" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M344.5 170.5 L353 162" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M353.6 161.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<text x="325" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >LNA + gain</text>
+<text x="325" y="245" font-size="11" text-anchor="middle" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >rx_gain 40 dB</text>
+<path d="M347 190 L407 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<circle cx="425" cy="190" r="18" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M412.274 177.274 L437.726 202.726 M412.274 202.726 L437.726 177.274" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M443 190 L497 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="497.0" y="167.0" width="56" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M513.0 178 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M520 183 L530 173" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M513.0 190 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M520 195 L530 185" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M513.0 202 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<g><title>analog bandwidth</title><circle cx="553" cy="167" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M548.5 171.5 L557 163" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M557.6 162.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="525" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Low-pass</text>
+<text x="525" y="245" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >2.5 MHz</text>
+<path d="M553 190 L594 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="594.0" y="169.0" width="52" height="42" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="620" y="194.5" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="500" >ADC</text>
+<text x="620" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >12-bit</text>
+<path d="M646 190 L686 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="686.0" y="169.0" width="52" height="42" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="712" y="194.5" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="500" >↓ FIR</text>
+<text x="712" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Decimation</text>
+<text x="712" y="245" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >filters</text>
+<circle cx="425" cy="282" r="16" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M415.0 282 q5.0 -10 10.0 0 q5.0 10 10.0 0" stroke="#1f2937" stroke-width="1.6" fill="none"/>
+<path d="M425 266 L425 209" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<g><title>rx_center + rx_lo_offset</title><circle cx="441" cy="268" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M436.5 272.5 L445 264" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M445.6 263.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="452" y="280" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >RX LO</text>
+<text x="452" y="295" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >2401.000 MHz</text>
+<path d="M738 190 L826 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<circle cx="845" cy="190" r="18" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M832.274 177.274 L857.726 202.726 M832.274 202.726 L857.726 177.274" stroke="#1f2937" stroke-width="1.8"/>
+<text x="845" y="160" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Digital mixer</text>
+<circle cx="845" cy="282" r="16" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M835.0 282 q5.0 -10 10.0 0 q5.0 10 10.0 0" stroke="#1f2937" stroke-width="1.6" fill="none"/>
+<path d="M845 266 L845 209" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<g><title>rx_lo_offset</title><circle cx="861" cy="268" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M856.5 272.5 L865 264" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M865.6 263.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="872" y="280" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >NCO −750 kHz</text>
+<text x="872" y="295" font-size="11" text-anchor="start" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >rx_lo_offset</text>
+<path d="M863 190 L919 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="919.0" y="169.0" width="52" height="42" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="945" y="194.5" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="500" >↓ N</text>
+<g><title>samp_rate</title><circle cx="971" cy="169" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M966.5 173.5 L975 165" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M975.6 164.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="945" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Decimate to</text>
+<text x="945" y="245" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >625 kS/s</text>
+<path d="M971 190 L1052 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<text x="1018" y="182" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="400" >USB 3</text>
+<rect x="1052.0" y="167.0" width="56" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M1068.0 178 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M1075 183 L1085 173" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1068.0 190 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M1075 195 L1085 185" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1068.0 202 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<g><title>passband</title><circle cx="1108" cy="167" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M1103.5 171.5 L1112 163" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M1112.6 162.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="1080" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Channel filter</text>
+<text x="1080" y="245" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >±250 kHz</text>
+<path d="M1108 190 L1188 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M1188.0 168.0 L1232.0 190 L1188.0 212.0 Z" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M1190.0 214.0 L1228.0 168.0" stroke="#1f2937" stroke-width="1.3" fill="none" marker-end="url(#ahs)"/>
+<g><title>xpdr_gain_db slider</title><circle cx="1234" cy="166" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M1229.5 170.5 L1238 162" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M1238.6 161.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<text x="1210" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Transponder gain</text>
+<text x="1210" y="245" font-size="11" text-anchor="middle" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >xpdr_gain_db +5 dB</text>
+<path d="M1232 190 L1325 190" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="1325.0" y="168.0" width="86" height="44" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="1368" y="187.0" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >LEILA</text>
+<text x="1368" y="202.0" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >limiter</text>
+<g><title>LEILA limiter checkbox</title><circle cx="1411" cy="168" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M1406.5 172.5 L1415 164" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M1415.6 163.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<text x="1368" y="230" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >only strong</text>
+<text x="1368" y="245" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >signals reduced</text>
+<rect x="1240.0" y="92.0" width="170" height="40" rx="4" fill="#ffffff" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="1325" y="116.5" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="500" >LEILA detector (FFT)</text>
+<g><title>leila_thresh_dbfs, leila_limit_db</title><circle cx="1410" cy="92" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M1405.5 96.5 L1414 88" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M1414.6 87.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<path d="M1280 190 L1280 132" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
+<path d="M1368 132 L1368 168" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
+<rect x="1042.0" y="260.0" width="96" height="28" rx="4" fill="#ffffff" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="1090" y="278.5" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="500" >RX level meter</text>
+<path d="M1031 190 L1031 274 L1042 274" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+<circle cx="1031" cy="190" r="3" fill="#6b7280"/><circle cx="1280" cy="190" r="3" fill="#6b7280"/>
+<path d="M1411 190 L1455 190 L1455 414" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<circle cx="1455" cy="432" r="18" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M1446 432 L1464 432 M1455 423 L1455 441" stroke="#1f2937" stroke-width="2"/>
+<text x="1455" y="388" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" ></text>
+<rect x="1060.0" y="322.0" width="300" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="1072" y="342" font-size="12" text-anchor="start" fill="#1f2937" font-weight="500" >Lower beacon · Morse · −245 kHz</text>
+<text x="1072" y="358" font-size="11" text-anchor="start" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >beacon_level_db −43 dBFS</text>
+<g><title>beacon_level_db −43 dBFS</title><circle cx="1360" cy="322" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M1355.5 326.5 L1364 318" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M1364.6 317.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<path d="M1360 345 L1398 345" fill="none" stroke="#1f2937" stroke-width="2"/>
+<rect x="1060.0" y="380.0" width="300" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="1072" y="400" font-size="12" text-anchor="start" fill="#1f2937" font-weight="500" >Upper beacon · Morse · +245 kHz</text>
+<text x="1072" y="416" font-size="11" text-anchor="start" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >beacon_level_db −43 dBFS</text>
+<g><title>beacon_level_db −43 dBFS</title><circle cx="1360" cy="380" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M1355.5 384.5 L1364 376" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M1364.6 375.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<path d="M1360 403 L1398 403" fill="none" stroke="#1f2937" stroke-width="2"/>
+<rect x="1060.0" y="438.0" width="300" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="1072" y="458" font-size="12" text-anchor="start" fill="#1f2937" font-weight="500" >Voice · WAV → SSB 300–2700 Hz</text>
+<text x="1072" y="474" font-size="11" text-anchor="start" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >voice_on, voice_level_db −20 dBFS</text>
+<g><title>voice_on, voice_level_db −20 dBFS</title><circle cx="1360" cy="438" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M1355.5 442.5 L1364 434" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M1364.6 433.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<path d="M1360 461 L1398 461" fill="none" stroke="#1f2937" stroke-width="2"/>
+<rect x="1060.0" y="496.0" width="300" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="1072" y="516" font-size="12" text-anchor="start" fill="#1f2937" font-weight="500" >LEILA markers · 3 tone sources</text>
+<text x="1072" y="532" font-size="11" text-anchor="start" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >set by the LEILA detector</text>
+<g><title>set by the LEILA detector</title><circle cx="1360" cy="496" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M1355.5 500.5 L1364 492" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M1364.6 491.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<path d="M1360 519 L1398 519" fill="none" stroke="#1f2937" stroke-width="2"/>
+<path d="M1398 345 L1398 519" fill="none" stroke="#1f2937" stroke-width="2"/>
+<path d="M1398 432 L1436 432" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<text x="1430" y="468" font-size="12" text-anchor="end" fill="#1f2937" font-weight="400" >sum</text>
+<path d="M1455 450 L1455 690 L1413 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<circle cx="1455" cy="600" r="3" fill="#6b7280"/>
+<rect x="1185.0" y="586.0" width="230" height="28" rx="4" fill="#ffffff" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="1300" y="604.5" font-size="11" text-anchor="middle" fill="#1f2937" font-weight="500" >TX drive meter · spectrum · waterfall</text>
+<path d="M1455 600 L1415 600" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+<rect x="1323.0" y="668.0" width="90" height="44" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="1368" y="687.0" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Conjugate</text>
+<text x="1368" y="702.0" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >x → x*</text>
+<text x="1368" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >undoes harmonic</text>
+<text x="1368" y="745" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >spectrum flip</text>
+<path d="M1323 690 L1241 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="1129.0" y="668.0" width="112" height="44" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="1185" y="687.0" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Delay</text>
+<text x="1185" y="702.0" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >100 ms</text>
+<g><title>tx_prefill_ms</title><circle cx="1241" cy="668" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M1236.5 672.5 L1245 664" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M1245.6 663.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="1185" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >buffer reserve</text>
+<text x="1185" y="745" font-size="11" text-anchor="middle" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >tx_prefill_ms</text>
+<path d="M1129 690 L971 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<text x="1052" y="682" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="400" >USB 3</text>
+<rect x="919.0" y="669.0" width="52" height="42" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="945" y="694.5" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="500" >↑ N</text>
+<text x="945" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Interpolate</text>
+<path d="M919 690 L863 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<circle cx="845" cy="690" r="18" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M832.274 677.274 L857.726 702.726 M832.274 702.726 L857.726 677.274" stroke="#1f2937" stroke-width="1.8"/>
+<text x="845" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Digital mixer</text>
+<circle cx="845" cy="598" r="16" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M835.0 598 q5.0 -10 10.0 0 q5.0 10 10.0 0" stroke="#1f2937" stroke-width="1.6" fill="none"/>
+<path d="M845 614 L845 671" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<g><title>tx_shift</title><circle cx="861" cy="584" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M856.5 588.5 L865 580" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M865.6 579.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="872" y="590" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >NCO +300 kHz</text>
+<text x="872" y="605" font-size="11" text-anchor="start" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >tx_shift</text>
+<path d="M827 690 L738 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="686.0" y="669.0" width="52" height="42" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="712" y="694.5" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="500" >↑ FIR</text>
+<text x="712" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Interpolation</text>
+<text x="712" y="745" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >filters</text>
+<path d="M686 690 L646 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="594.0" y="669.0" width="52" height="42" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="620" y="694.5" font-size="13" text-anchor="middle" fill="#1f2937" font-weight="500" >DAC</text>
+<text x="620" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >12-bit</text>
+<path d="M594 690 L553 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="497.0" y="667.0" width="56" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M513.0 678 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M520 683 L530 673" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M513.0 690 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M520 695 L530 685" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M513.0 702 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<g><title>analog bandwidth</title><circle cx="553" cy="667" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M548.5 671.5 L557 663" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M557.6 662.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="525" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Low-pass</text>
+<text x="525" y="745" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >2 MHz</text>
+<path d="M497 690 L443 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<circle cx="425" cy="690" r="18" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M412.274 677.274 L437.726 702.726 M412.274 702.726 L437.726 677.274" stroke="#1f2937" stroke-width="1.8"/>
+<text x="425" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Mixer</text>
+<circle cx="425" cy="598" r="16" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M415.0 598 q5.0 -10 10.0 0 q5.0 10 10.0 0" stroke="#1f2937" stroke-width="1.6" fill="none"/>
+<path d="M425 614 L425 671" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<g><title>tx_center, tx_shift</title><circle cx="441" cy="584" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M436.5 588.5 L445 580" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M445.6 579.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="452" y="590" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >TX LO</text>
+<text x="452" y="605" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >3496.683 MHz</text>
+<path d="M407 690 L347 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M347.0 668.0 L303.0 690 L347.0 712.0 Z" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M305.0 714.0 L343.0 668.0" stroke="#1f2937" stroke-width="1.3" fill="none" marker-end="url(#ahs)"/>
+<g><title>tx_gain slider</title><circle cx="301" cy="666" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M296.5 670.5 L305 662" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M305.6 661.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<text x="325" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >Attenuator + driver</text>
+<text x="325" y="745" font-size="11" text-anchor="middle" fill="#c2410c" font-weight="400" font-family="Consolas,Menlo,monospace" >tx_gain 89.75 dB</text>
+<path d="M303 690 L193 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<text x="256" y="682" font-size="11" text-anchor="end" fill="#6b7280" font-weight="400" >TX/RX</text>
+<rect x="137.0" y="667.0" width="56" height="46" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M153.0 678 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M160 683 L170 673" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M153.0 690 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M153.0 702 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M160 707 L170 697" stroke="#1f2937" stroke-width="1.4"/>
+<text x="165" y="730" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >10 GHz</text>
+<text x="165" y="745" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >band-pass</text>
+<path d="M137 690 L78 690" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M78 683 L78 697 L46 712 L46 668 Z" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="165" y="654" font-size="12" text-anchor="middle" fill="#6b7280" font-weight="400" >10489.5–10490.0 MHz</text>
+<text x="280" y="790" font-size="12" text-anchor="start" fill="#6b7280" font-weight="400" >The 10 GHz signal is the 3rd harmonic of the TX mixer: 3 × 3496.683 MHz − baseband. The filter removes 3.5 and 7 GHz.</text>
+<rect x="320.0" y="415.0" width="210" height="50" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<text x="425" y="437.0" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >40 MHz reference + PLL</text>
+<text x="425" y="452.0" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >locked to external 10 MHz</text>
+<g><title>External 10 MHz ref checkbox</title><circle cx="530" cy="415" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M525.5 419.5 L534 411" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M534.6 410.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<path d="M425 415 L425 299" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
+<path d="M425 465 L425 581" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
+<path d="M120 440 L320 440" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<text x="135" y="414" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >10 MHz in</text>
+<text x="135" y="429" font-size="12" text-anchor="middle" fill="#1f2937" font-weight="400" >(GPSDO)</text>
+<text x="566" y="444" font-size="11" text-anchor="start" fill="#6b7280" font-weight="400" >also clocks ADC, DAC, FPGA</text>
+<path d="M530 440 L560 440" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+<rect x="20" y="840" width="1460" height="56" rx="8" fill="#fafafa" stroke="#e5e7eb"/>
+<path d="M36.8 854.8 L63.2 868 L36.8 881.2 Z" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M38.0 882.4 L60.8 854.8" stroke="#1f2937" stroke-width="1.3" fill="none" marker-end="url(#ahs)"/>
+<text x="74" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >amplifier (arrow: variable gain)</text>
+<circle cx="280" cy="868" r="13" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M270.809 858.809 L289.191 877.191 M270.809 877.191 L289.191 858.809" stroke="#1f2937" stroke-width="1.8"/>
+<text x="302" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >mixer</text>
+<circle cx="370" cy="868" r="13" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M360.0 868 q5.0 -10 10.0 0 q5.0 10 10.0 0" stroke="#1f2937" stroke-width="1.6" fill="none"/>
+<text x="392" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >oscillator</text>
+<rect x="470.0" y="850.0" width="40" height="36" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M478.0 856 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M485 861 L495 851" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M478.0 868 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M478.0 880 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M485 885 L495 875" stroke="#1f2937" stroke-width="1.4"/>
+<text x="520" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >band-pass</text>
+<rect x="598.0" y="850.0" width="40" height="36" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M606.0 856 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M613 861 L623 851" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M606.0 868 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<path d="M613 873 L623 863" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M606.0 880 q6.0 -7.0 12.0 0 q6.0 7.0 12.0 0" stroke="#1f2937" stroke-width="1.4" fill="none"/>
+<text x="648" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >low-pass</text>
+<circle cx="728" cy="868" r="13" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/><path d="M719 868 L737 868 M728 859 L728 877" stroke="#1f2937" stroke-width="2"/>
+<text x="750" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >sum</text>
+<g><title></title><circle cx="804" cy="868" r="9" fill="#c2410c" stroke="#c2410c" stroke-width="1.6"/><path d="M799.5 872.5 L808 864" stroke="#ffffff" stroke-width="1.8" fill="none"/><path d="M808.6 863.4 l-4.2 0.6 l3.6 3.6 z" fill="#ffffff"/></g>
+<text x="820" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >adjustable while running</text>
+<g><title></title><circle cx="990" cy="868" r="9" fill="#ffffff" stroke="#c2410c" stroke-width="1.6"/><path d="M985.5 872.5 L994 864" stroke="#c2410c" stroke-width="1.8" fill="none"/><path d="M994.6 863.4 l-4.2 0.6 l3.6 3.6 z" fill="#c2410c"/></g>
+<text x="1006" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >flowgraph variable</text>
+<path d="M1138 868 L1172 868" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#ah)"/>
+<text x="1180" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >signal</text>
+<path d="M1236 868 L1270 868" fill="none" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
+<text x="1278" y="872" font-size="12" text-anchor="start" fill="#1f2937" font-weight="400" >control / measurement</text>
+</svg>
